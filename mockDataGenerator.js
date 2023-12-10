@@ -1,5 +1,5 @@
 const faker = require('faker');
-const sportsData = require('./data/sportsData');
+const sportsData = require('./sportsData');
 
 function generateSpread(sport) {
   const spreadRanges = {

@@ -4,7 +4,8 @@
   "description": "The app generates 20 mock sporting events and betting data a day. Also, update past game results when game time passes.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +14,10 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "faker": "^5.5.3",
-    "morgan": "^1.10.0"
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
