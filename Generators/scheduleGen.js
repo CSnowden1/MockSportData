@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const mysql = require('mysql');
 const util = require('util');
 const moment = require('moment');
@@ -8,7 +10,6 @@ const connection = mysql.createConnection({
     password: '9411',
     database: 'sportsbetting'
 });
-
 // Promisify the query function
 const query = util.promisify(connection.query).bind(connection);
 
@@ -56,4 +57,4 @@ const generateSchedule = async (leagueId, startDate) => {
     }
 };
 
-generateSchedule(1, '2023-11-1');
+generateSchedule(1, '2023-11-3');
