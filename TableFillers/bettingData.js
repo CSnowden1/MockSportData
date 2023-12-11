@@ -1,13 +1,14 @@
 const mysql = require('mysql');
 const util = require('util');
-const { generateSportsMatch } = require('./mockDataGenerator');
+const { generateSportsMatch } = require('../Generators/bettingDataGen');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '9411',
-    database: 'sportsbetting'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
+
 
 const query = util.promisify(connection.query).bind(connection);
 
@@ -47,13 +48,6 @@ async function updateGameResults() {
             } else {
                 console.log(`Game ${game.game_id} already exists in 'games' table.`);
             }
-
-            await query('UPDATE schedule SET status = "played", home_score = ?, away_score = ? WHERE game_id = ?', [
-                matchResult.result.scoreHome, 
-                matchResult.result.scoreAway, 
-                game.game_id
-            ]);
-            console.log(`Updated game ${game.game_id} in 'schedule' table.`);
         }
     } catch (err) {
         console.error('Error:', err.message);

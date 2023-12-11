@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 // Set up your MySQL connection
 const connection = mysql.createConnection({
-    host: 'localhost',  // Replace with your host name
-    user: 'root',       // Replace with your database username
-    password: '9411',  // Replace with your database password
-    database: 'sportsbetting' // Replace with your database name
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 // Define the leagues data
