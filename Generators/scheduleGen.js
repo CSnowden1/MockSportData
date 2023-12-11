@@ -28,7 +28,7 @@ const generateSchedule = async (leagueId, startDate) => {
         }
 
         let gameDate = moment(startDate, 'YYYY-MM-DD');
-        const totalGames = 10; // Each team plays 10 games
+        const totalGames = 10;
         let schedule = [];
 
         for (let game = 0; game < totalGames; game++) {
@@ -36,7 +36,7 @@ const generateSchedule = async (leagueId, startDate) => {
             for (let i = 0; i < shuffledTeams.length; i += 2) {
                 const homeTeam = shuffledTeams[i].team_id;
                 const awayTeam = shuffledTeams[i + 1].team_id;
-                const gameTime = (i / 2) % 2 === 0 ? '13:00:00' : '16:30:00'; // Alternate between 1 PM and 4:30 PM
+                const gameTime = (i / 2) % 2 === 0 ? '13:00:00' : '16:30:00';
                 schedule.push({
                     home: homeTeam,
                     away: awayTeam,
@@ -56,4 +56,4 @@ const generateSchedule = async (leagueId, startDate) => {
     }
 };
 
-generateSchedule(19, '2023-12-11'); // Replace 1 with your actual league_id
+generateSchedule(1, '2023-11-1');
