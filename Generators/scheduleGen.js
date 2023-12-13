@@ -57,4 +57,4 @@ const generateSchedule = async (leagueId, startDate) => {
     }
 };
 
-generateSchedule(1, '2023-11-3');
+generateSchedule(1, '2023-11-5');
