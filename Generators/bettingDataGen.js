@@ -6,6 +6,7 @@ function generateSpread(sport) {
     'NFL': { min: 1, max: 12 },
     'NHL': { min: 1, max: 3 },
     'College Football': { min: 1, max: 26 },
+    'College Basketball': {min: 1, max: 16},
     'Premier League': { min: 1, max: 3 },
     'default': { min: 1, max: 8 }
   };
